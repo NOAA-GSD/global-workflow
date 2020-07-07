@@ -20,7 +20,6 @@ build_image() {
                  --build-arg REPO=${REPO} \
                  --build-arg GERRIT_ID=${GERRIT_ID} \
                  -t ${1} -f ${2} .
-    docker build --build-arg REPO=${REPO} -t ${1} -f ${2} .
     if docker inspect temp &> /dev/null; then
        echo $'\tremoving existing temp image'
        docker rm -f temp 
